@@ -19,7 +19,7 @@ public class vote : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer < 0)
         {
-            Sort()
+			Sort();
             Debug.Log("cast votes");
         }
     }
