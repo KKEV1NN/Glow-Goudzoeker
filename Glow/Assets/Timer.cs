@@ -20,18 +20,15 @@ public class Timer : MonoBehaviour
 	{
 		votes.Add(s);
 	}
-
-	//private void 
-
 	public IEnumerator Count( // temp 
 	float targetTime,
 	System.Action<float> receiveTimeElapsed = null,
 	System.Func<bool> actionCondition = null,
-	System.Action conditionalAction = null,
-	System.Action onCountStart = null,
-	System.Action onCountEnd = null)
-	{
-		onCountStart?.Invoke();
+    System.Action conditionalAction = null,
+    System.Action onCountStart = null,
+    System.Action onCountEnd = null)
+    {
+        onCountStart?.Invoke();
 
 		float timeElapsed = 0f;
 		receiveTimeElapsed?.Invoke(timeElapsed);

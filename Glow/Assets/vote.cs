@@ -5,17 +5,14 @@ using UnityEngine;
 public class vote : MonoBehaviour
 {
     public bool isCounting;
-    public float timer = 100;
+    public float timer = 10;
     List<string> votes = new List<string>();
-    void Start()
-    {
-        if (votes.Count > 0)
-            votes.Clear();
-    }
-
+    public int A;
+    public  int B;
+    public int C;
     private void Update()
     {
-        Debug.Log(timer);
+       // Debug.Log(timer);
         timer -= Time.deltaTime;
         if(timer < 0)
         {
@@ -24,13 +21,53 @@ public class vote : MonoBehaviour
         }
     }
 
-    public void Voted(string s)
+    public void Vote(string s)
     {
         votes.Add(s);
+    }
+    private void CheckHighest()
+    {
+        int mostvotes = A;
+        if (B > mostvotes)
+        {
+            mostvotes = B;
+            // do animation b 
+            Debug.Log("animation B");
+        }
+        if (C > mostvotes)
+        {
+            mostvotes = C;
+            Debug.Log("animation C");
+            // do animation c
+        }
+        else
+        {
+            Debug.Log("animation A");
+            //do animation A
+        }
+
+        // if (D > mostvotes){ mostvotes = D; // do animation D } 
+        A = 0;
+        B = 0;
+        C = 0;
     }
 
     private void Sort()
     {
+        foreach(string word in votes)
+        {
+            if(word == "A")
+                A += 1;
+            if (word == "B")
+                B += 1;
+            if (word == "C")
+                C += 1;
+        }
+        CheckHighest();
+
+        timer = 10;
+        if (votes.Count > 0)
+            votes.Clear();
     }
 
 }
