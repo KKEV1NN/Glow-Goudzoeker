@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class temp : MonoBehaviour
+public class Temp : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,15 +15,15 @@ public class temp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            gameObject.GetComponent<vote>().Vote("A");
+            gameObject.GetComponent<Vote>()._vote("A");
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
-            gameObject.GetComponent<vote>().Vote("B");
+            gameObject.GetComponent<Vote>()._vote("B");
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            gameObject.GetComponent<vote>().Vote("C");
+            gameObject.GetComponent<Vote>()._vote("C");
         }
     }
 }
